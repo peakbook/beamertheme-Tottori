@@ -1,0 +1,69 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerouterthemeTottori}[2016/07/04 Tottori outer theme]
+
+\mode<presentation>
+
+\RequirePackage{xpatch}
+\setbeamertemplate{itemize item}{\scriptsize\raise2.0pt\hbox{\donotcoloroutermaths$\blacksquare$}}
+\setbeamertemplate{itemize subitem}{\scriptsize\raise1.5pt\hbox{\donotcoloroutermaths$\bullet$}}
+\setbeamertemplate{itemize subsubitem}{\scriptsize\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+\setbeamertemplate{itemize subsubsubitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$-$}}
+
+\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+\addtolength{\leftmargini}{\labelsep}
+\settowidth{\leftmarginii}{\usebeamertemplate{itemize subitem}}
+\addtolength{\leftmarginii}{2\labelsep}
+
+\xpatchcmd{\itemize}
+{\def\makelabel}
+{\ifnum\@itemdepth=1\relax
+    \setlength\itemsep{1ex}% separation for first level
+    \else
+    \ifnum\@itemdepth=2\relax
+    \setlength\itemsep{0.5ex}% separation for second level
+    \else
+    \ifnum\@itemdepth=3\relax
+    \setlength\itemsep{0.25ex}% separation for third level
+    \fi\fi\fi\def\makelabel
+}{}{}
+
+\useoutertheme{default}
+
+\newlength{\margin}
+\setlength{\margin}{1em}
+\setbeamersize{text margin left=\margin, text margin right=\margin}
+
+\defbeamertemplate*{headline}{Tottori}{}
+
+\defbeamertemplate*{frametitle}{Tottori}{%
+    \vskip-0.5ex
+    \begin{beamercolorbox}[wd=\paperwidth,ht=3.5ex,left,leftskip=0.2em]{frametitle}
+        {\usebeamerfont{frametitle} \strut\insertframetitle\strut}\hskip0.2em{\usebeamerfont{framesubtitle} \strut\insertframesubtitle\strut}%
+    \end{beamercolorbox}
+}
+
+\defbeamertemplate*{footline}{Tottori}{%
+    \usebeamerfont{footline}%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,right,rightskip=0.5em]{structure}%
+        \usebeamercolor[bg]{structure}%
+        \ifbeamer@framenumber
+        {\usebeamerfont{framenumber}\insertframenumber{}}%~/~\inserttotalframenumber
+        \fi
+    \end{beamercolorbox}%
+}
+
+\defbeamertemplate*{background}{Tottori}{}
+\defbeamertemplate*{sidebar right}{Tottori}{}
+
+\defbeamertemplate*{background canvas}{Tottori}{%
+    \ifnum\c@framenumber=1%
+    \begin{beamercolorbox}[wd=1.2\paperwidth, ht=\paperheight]{title}
+    \end{beamercolorbox}
+    \else%
+    \ifnum\c@framenumber=\inserttotalframenumber%
+    \else%
+    \fi%
+    \fi%
+}
+
+\mode<all>

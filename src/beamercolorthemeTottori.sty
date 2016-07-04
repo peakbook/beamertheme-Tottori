@@ -1,0 +1,43 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamercolorthemeTottori}[2016/07/04 Tottori color theme]
+\mode<presentation>
+
+\RequirePackage[most]{tcolorbox}
+
+\setbeamercovered{transparent=.5}
+\definecolor{basecolor}{HTML}{003D64}
+\definecolor{alertedcolor}{HTML}{C05350}
+\definecolor{examplecolor}{HTML}{76923C}
+\setbeamercolor{title}{fg=white,bg=basecolor}
+\setbeamercolor{title page}{fg=white,bg=basecolor}
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{structure}{fg=basecolor}
+\setbeamercolor{math text}{fg=black}
+\setbeamercolor{separation line}{fg=red}
+\setbeamercolor{footline}{fg=white,bg=basecolor!60!black}
+\setbeamercolor{headline}{fg=white,bg=basecolor!60!black}
+\setbeamercolor{frametitle}{fg=white,bg=basecolor}
+
+\tcbset{%
+    enhanced,
+    noparskip,
+    fonttitle=\bf,
+    colback=gray!10, %background color of the box
+    colframe=gray!40,%color of frame and title background
+    coltext=black,   %color of body text
+    coltitle=black,  %color of title text 
+    left=3pt, right=3pt,
+    alerted/.style={%
+        coltitle=white, 
+        colframe=red!75!black,
+        colback=red!5!white
+    },
+    example/.style={%
+        coltitle=white, 
+        colframe=DarkGreen!75,
+        colback=green!5!white
+    },
+    left=1mm,right=1mm,top=1mm,bottom=1mm
+}
+
+\mode<all>

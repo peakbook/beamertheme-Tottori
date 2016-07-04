@@ -1,0 +1,49 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerinnerthemeTottori}[2016/07/04 Tottori inner theme]
+
+\mode<presentation>
+
+\RequirePackage{ifthen}
+
+\useinnertheme{rectangles}
+
+\defbeamertemplate*{title page}{Tottori}[1][]{%
+    \thispagestyle{empty}
+    \vfill%
+    \vskip2ex
+    \begin{columns}
+        \begin{column}{0.8\paperwidth}
+            \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par%
+            \ifx\insertsubtitle\@empty%
+            \else%
+            {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+            \fi%
+            \vskip-1ex%
+            \rule{\textwidth}{1pt}
+            \vskip.3ex%
+            \ifx\insertauthor\@empty%
+            \else%
+            \vskip.7ex%
+            {\raggedleft\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}%
+            \fi%
+            \ifx\insertinstitute\@empty%
+            \else%
+            \vskip.3ex%
+            {\raggedleft\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
+            \fi%
+            \ifx\insertdate\@empty%
+            \else%
+            \vskip.3ex%
+            {\raggedleft\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
+            \fi%
+            \ifx\inserttitlegraphic\@empty%
+            \else%
+            \vskip.3ex%
+            {\raggedleft\usebeamercolor[fg]{titlegraphic}\inserttitle}%
+            \fi%
+        \end{column}
+    \end{columns}
+    \vfill%
+}
+
+\mode<all>

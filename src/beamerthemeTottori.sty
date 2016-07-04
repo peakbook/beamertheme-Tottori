@@ -1,0 +1,19 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeTottori}[2016/07/04 Tottori theme]
+
+\newif\ifbeamer@framenumber
+\beamer@framenumberfalse
+\DeclareOptionBeamer{framenumber}{\beamer@framenumbertrue}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{frametitle continuation}{\gdef\beamer@frametitle{}}
+
+\useinnertheme{Tottori}
+\usefonttheme {Tottori}
+\usecolortheme{Tottori}
+\useoutertheme{Tottori}
+
+\mode<all>
