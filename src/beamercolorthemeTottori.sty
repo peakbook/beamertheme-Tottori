@@ -23,10 +23,11 @@
     noparskip,
     fonttitle=\bf,
     colback=gray!10,
-    colframe=gray!40,
+    colframe=darkgray!80,
     coltext=black,
-    coltitle=black,
+    coltitle=white,
     left=3pt, right=3pt,
+    before upper={\setbeamercolor{local structure}{fg=darkgray!80}},
     alerted/.style={%
         coltitle=white, 
         colframe=alertedcolor,
@@ -36,7 +37,7 @@
     example/.style={%
         coltitle=white, 
         colframe=examplecolor,
-        colback=examplecolor!5!white
+        colback=examplecolor!5!white,
         before upper={\setbeamercolor{local structure}{fg=examplecolor}}
     },
     left=1mm,right=1mm,top=1mm,bottom=1mm
