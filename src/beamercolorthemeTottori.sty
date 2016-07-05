@@ -22,22 +22,43 @@
     enhanced,
     noparskip,
     fonttitle=\bf,
-    colback=gray!10, %background color of the box
-    colframe=gray!40,%color of frame and title background
-    coltext=black,   %color of body text
-    coltitle=black,  %color of title text 
+    colback=gray!10,
+    colframe=gray!40,
+    coltext=black,
+    coltitle=black,
     left=3pt, right=3pt,
     alerted/.style={%
         coltitle=white, 
-        colframe=red!75!black,
-        colback=red!5!white
+        colframe=alertedcolor,
+        colback=alertedblock!5!white
     },
     example/.style={%
         coltitle=white, 
-        colframe=DarkGreen!75,
-        colback=green!5!white
+        colframe=examplecolor,
+        colback=examplecolor!5!white
     },
     left=1mm,right=1mm,top=1mm,bottom=1mm
 }
+
+% https://github.com/josephwright/beamer/issues/322
+\long\def\beamer@newenvnoopt#1#2#3#4{%
+    \expandafter\renewcommand\expandafter<\expandafter>\csname#1\endcsname[#2]{#3}
+    \expandafter\long\expandafter\def\csname end#1\endcsname{#4}%
+}
+\long\def\beamer@newenvopt#1#2[#3]#4#5{%
+    \expandafter\renewcommand\expandafter<\expandafter>\csname#1\endcsname[#2][#3]{#4}
+    \expandafter\long\expandafter\def\csname end#1\endcsname{#5}%
+}
+
+\renewenvironment<>{block}[1]
+{\begin{tcolorbox}[title=#1]}
+{\end{tcolorbox}}
+\renewenvironment<>{exampleblock}[1]
+{\begin{tcolorbox}[example, title=#1]}
+{\end{tcolorbox}}
+\renewenvironment<>{alertedblock}[1]
+{\begin{tcolorbox}[alerted, title=#1]}
+{\end{tcolorbox}}
+
 
 \mode<all>
