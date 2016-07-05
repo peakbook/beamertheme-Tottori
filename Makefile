@@ -1,5 +1,4 @@
 PKG_STY = $(wildcard src/*.sty)
-
 DESTDIR ?= $(shell kpsewhich -var-value=TEXMFHOME)
 INSTALL_DIR = $(DESTDIR)/tex/latex/beamertheme-tottori
 
@@ -10,6 +9,6 @@ install: $(PKG_STY)
 	@cp $(PKG_STY) $(INSTALL_DIR)
 
 uninstall:
-	@rm $(addprefix $(INSTALL_DIR)/, $(notdir $(PKG_STY)))
+	@rm -i $(addprefix $(INSTALL_DIR)/, $(notdir $(PKG_STY)))
 	@rmdir "$(INSTALL_DIR)"
 
