@@ -30,12 +30,14 @@
     alerted/.style={%
         coltitle=white, 
         colframe=alertedcolor,
-        colback=alertedblock!5!white
+        colback=alertedcolor!5!white,
+        before upper={\setbeamercolor{local structure}{fg=alertedcolor}}
     },
     example/.style={%
         coltitle=white, 
         colframe=examplecolor,
         colback=examplecolor!5!white
+        before upper={\setbeamercolor{local structure}{fg=examplecolor}}
     },
     left=1mm,right=1mm,top=1mm,bottom=1mm
 }
