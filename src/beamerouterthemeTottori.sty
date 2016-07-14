@@ -3,37 +3,24 @@
 
 \mode<presentation>
 
-\RequirePackage{xpatch}
-\setbeamertemplate{itemize item}{\scriptsize\raise2.0pt\hbox{\donotcoloroutermaths$\blacksquare$}}
-\setbeamertemplate{itemize subitem}{\scriptsize\raise1.5pt\hbox{\donotcoloroutermaths$\bullet$}}
-\setbeamertemplate{itemize subsubitem}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
-
-\setbeamertemplate{enumerate item}{\usebeamercolor[bg]{item projected}\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}}
-\setbeamertemplate{enumerate subitem}{\usebeamercolor[bg]{item projected}\raisebox{1.25pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}}
-\setbeamertemplate{enumerate subsubitem}{\usebeamercolor[bg]{item projected}\raisebox{1.0pt}{\colorbox{bg}{\color{fg}\tiny\insertenumlabel}}}
-
-\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
-\addtolength{\leftmargini}{\labelsep}
-\settowidth{\leftmarginii}{\usebeamertemplate{itemize subitem}}
-\addtolength{\leftmarginii}{\labelsep}
-
-\xpatchcmd{\itemize}
-{\def\makelabel}
-{\ifnum\@itemdepth=1\relax
-    \setlength\itemsep{0.25ex}% separation for first level
-    \else
-    \ifnum\@itemdepth=2\relax
-    \setlength\itemsep{0.25ex}% separation for second level
-    \else
-    \ifnum\@itemdepth=3\relax
-    \setlength\itemsep{0.25ex}% separation for third level
-    \fi\fi\fi\def\makelabel
-}{}{}
-
-\useoutertheme{default}
-
 \newlength{\margin}
 \setlength{\margin}{1em}
+
+\setbeamertemplate{itemize item}{\raisebox{0.2ex}{\scriptsize\donotcoloroutermaths$\blacksquare$}}
+\setbeamertemplate{itemize subitem}{\raisebox{0.2ex}{\scriptsize\donotcoloroutermaths$\bullet$}}
+\setbeamertemplate{itemize subsubitem}{\raisebox{0.2ex}{\scriptsize\donotcoloroutermaths$\blacktriangleright$}}
+\setbeamertemplate{enumerate item}{\raisebox{0.2ex}{\usebeamercolor[bg]{item projected}{\colorbox{bg}{\color{fg}\scriptsize\insertenumlabel}}}}
+\setbeamertemplate{enumerate subitem}{\raisebox{0.2ex}{\usebeamercolor[bg]{item projected}{\colorbox{bg}{\color{fg}\tiny\insertsubenumlabel}}}}
+\setbeamertemplate{enumerate subsubitem}{\raisebox{0.2ex}{\usebeamercolor[bg]{item projected}{\colorbox{bg}{\color{fg}\tiny\insertsubsubenumlabel}}}}
+
+\settowidth{\leftmargini}{\usebeamertemplate{itemize/enumerate item}}
+\addtolength{\leftmargini}{1.5\margin}
+\settowidth{\leftmarginii}{\usebeamertemplate{itemize/enumerate subitem}}
+\addtolength{\leftmarginii}{\margin}
+\settowidth{\leftmarginiii}{\usebeamertemplate{itemize/enumerate subitem}}
+\addtolength{\leftmarginiii}{\margin}
+
+\useoutertheme{default}
 \setbeamersize{text margin left=\margin, text margin right=\margin}
 
 \defbeamertemplate*{headline}{Tottori}{}
