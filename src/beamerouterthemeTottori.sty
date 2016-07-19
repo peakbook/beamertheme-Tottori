@@ -45,15 +45,4 @@
 \defbeamertemplate*{background}{Tottori}{}
 \defbeamertemplate*{sidebar right}{Tottori}{}
 
-\defbeamertemplate*{background canvas}{Tottori}{%
-    \ifnum\c@framenumber=1%
-    \begin{beamercolorbox}[wd=1.2\paperwidth, ht=\paperheight]{title}
-    \end{beamercolorbox}
-    \else%
-    \ifnum\c@framenumber=\inserttotalframenumber%
-    \else%
-    \fi%
-    \fi%
-}
-
 \mode<all>
