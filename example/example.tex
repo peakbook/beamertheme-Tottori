@@ -1,0 +1,85 @@
+\RequirePackage{luatex85}
+\RequirePackage{shellesc}
+\documentclass{beamer}
+\usepackage{scrextend}
+\usepackage{newpxmath}
+\usepackage[no-math]{luatexja-fontspec}
+
+\changefontsizes{12pt}
+\usetheme[framenumber]{Tottori}
+% \setbasecolor{7c45cc}
+
+\setmainfont[BoldFont=migmix-1p-bold.ttf]{migmix-1p-regular.ttf}
+\setsansfont[BoldFont=migmix-1p-bold.ttf]{migmix-1p-regular.ttf}
+\setmainjfont[BoldFont=migmix-1p-bold.ttf]{migmix-1p-regular.ttf}
+\setsansjfont[BoldFont=migmix-1p-bold.ttf]{migmix-1p-regular.ttf}
+
+\title{Tottori}
+\subtitle{A simple \LaTeX Beamer theme}
+\author{peakbook}
+\date{\today}
+\institute{鳥取国際教養アジア太平洋工科大学大学院\\自然科学研究科 砂丘工学専攻}
+\titlegraphic{}
+
+\begin{document}
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{一度は行ってみたい鳥取の魅惑スポット}
+\begin{frame}
+    \frametitle{\insertsection}
+    \begin{columns}[c]
+        \begin{column}{0.4\textwidth}
+            \begin{enumerate}
+                \item 鳥取駅
+                \item すなば珈琲
+                \item 鳥取砂丘
+                \item 大山
+                \item 弥留気地蔵本尊
+                \item 鳥取東照宮
+            \end{enumerate}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{tikzpicture}[y=1pt, x=1pt]
+                \path[fill=basecolor,nonzero rule] (20.0000,100.0000) .. controls
+                    (18.3199,100.0000) and (16.7969,99.3590) .. (15.6250,98.3359) --
+                    (3.3359,90.0000) -- (11.6641,90.0000) .. controls (11.6641,90.0000) and
+                    (0.7770,57.0352) .. (0.0000,40.0000) .. controls (0.0000,17.9102) and
+                    (17.9102,0.0000) .. (40.0000,0.0000) .. controls (62.0898,0.0000) and
+                    (80.0000,17.9102) .. (80.0000,40.0000) .. controls (80.0000,47.2852) and
+                    (78.0469,54.1172) .. (74.6449,60.0000) -- (51.9770,60.0000) .. controls
+                    (58.7699,55.9219) and (63.3359,48.5000) .. (63.3359,40.0000) .. controls
+                    (63.3359,27.1129) and (52.8871,16.6641) .. (40.0000,16.6641) .. controls
+                    (27.1129,16.6641) and (16.6641,27.1129) .. (16.6641,40.0000) .. controls
+                    (16.6641,52.8871) and (27.1129,63.3359) .. (40.0000,63.3359) --
+                    (75.0000,63.3359) -- (100.0000,80.0000) -- (40.0000,80.0000) .. controls
+                    (35.3090,80.0000) and (30.8520,79.1949) .. (26.6641,77.7109) --
+                    (26.6641,93.3359) .. controls (26.6641,97.0160) and (23.6801,100.0000) ..
+                    (20.0000,100.0000) -- cycle;
+                \end{tikzpicture}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Block Environment}
+\begin{frame}
+    \frametitle{\insertsection}
+    \begin{block}{block}
+        \begin{itemize}
+            \item Block
+        \end{itemize}
+    \end{block}
+    \begin{alertblock}{alertblock}
+        \begin{itemize}
+            \item AlertBlock
+        \end{itemize}
+    \end{alertblock}
+    \begin{exampleblock}{exampleblock}
+        \begin{itemize}
+            \item ExampleBlock
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\end{document}
