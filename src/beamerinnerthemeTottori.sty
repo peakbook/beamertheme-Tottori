@@ -8,11 +8,16 @@
 \useinnertheme{rectangles}
 
 \defbeamertemplate*{title page}{Tottori}[1][]{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[basecolor, fill=basecolor]
+            ([shift={(0.0cm,0.0cm)}]current page.north west)
+            rectangle
+            ([shift={(0.0cm,0.0cm)}]current page.south east);
+    \end{tikzpicture}
     \thispagestyle{empty}
-    \vfill%
     \vskip2ex
-    \begin{beamercolorbox}[wd=\paperwidth, ht=\paperheight]{title}
-        \begin{column}{0.8\paperwidth}
+    \begin{columns}
+        \begin{column}{0.85\paperwidth}
             \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par%
             \ifx\insertsubtitle\@empty%
             \else%
@@ -42,8 +47,7 @@
             {\raggedleft\usebeamercolor[fg]{titlegraphic}\inserttitle}%
             \fi%
         \end{column}
-    \end{beamercolorbox}
-    \vfill%
+    \end{columns}
 }
 
 \mode<all>
